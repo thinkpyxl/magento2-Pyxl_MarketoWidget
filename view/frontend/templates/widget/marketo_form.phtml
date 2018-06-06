@@ -1,0 +1,12 @@
+<?php
+/**
+ * @var $block \Pyxl\MarketoWidget\Block\Widget\Form
+ */
+?>
+<?php if ($form_id = $block->getData('form_id')): ?>
+    <script type="text/javascript" src="<?php echo $block->getSrc() ?>"></script>
+    <form id="mktoForm_<?php echo $form_id ?>">&nbsp;</form>
+    <script type="text/javascript">// <![CDATA[
+        <?php echo $block->buildForm(); ?>
+    // ]]></script>
+<?php endif; ?>

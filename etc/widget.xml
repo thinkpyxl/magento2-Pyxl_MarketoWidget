@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category    Pyxl
+ * @package     Pyxl_MarketoWidget
+ * @copyright   2018 Joel Rainwater
+ * @license     http://opensource.org/licenses/mit-license.php MIT License
+ * @author      Joel Rainwater <jrainwater@pyxl.com>
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="pyxl_marketo_form" class="Pyxl\MarketoWidget\Block\Widget\Form"
+            placeholder_image="Pyxl_MarketoWidget::images/widget_marketo_form.jpg">
+        <label translate="true">Marketo Form</label>
+        <description>Embed a Marketo Form</description>
+        <parameters>
+            <parameter name="form_id" xsi:type="text" required="false" visible="true">
+                <label translate="true">Form ID</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
