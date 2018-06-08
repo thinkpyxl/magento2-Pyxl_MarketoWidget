@@ -2,8 +2,8 @@
 /**
  * @category    Pyxl
  * @package     Pyxl_MarketoWidget
- * @copyright   2018 Joel Rainwater
- * @license     http://opensource.org/licenses/mit-license.php MIT License
+ * @copyright   © Pyxl, Inc. All rights reserved.
+ * @license     See LICENSE.txt for license details.
  * @author      Joel Rainwater <jrainwater@pyxl.com>
  */
 
