@@ -6,13 +6,13 @@ To install this module run the following.
 
 If you **don't** have Pyxl_Core installed already run this first:
 
-    composer config repositories.pyxl-core git git@bitbucket.org:pyxlinc/pyxl-core-extension.git
+    composer config repositories.pyxl-core git https://bitbucket.org/pyxlinc/pyxl-core-extension.git
     composer require pyxl/core:dev-master
     bin/magento module:enable Pyxl_Core
     
 Then require this package:
 
-    composer config repositories.pyxl-marketowidget git git@bitbucket.org:pyxlinc/pyxl_marketowidget.git
+    composer config repositories.pyxl-marketowidget git https://bitbucket.org/pyxlinc/pyxl_marketowidget.git
     composer require pyxl/marketo-widget:dev-master
     bin/magento module:enable Pyxl_MarketoWidget
     bin/magento setup:upgrade
