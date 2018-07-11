@@ -18,7 +18,7 @@
                 <label>Marketo Settings</label>
                 <field id="base_url" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Base URL</label>
-                    <comment>Base URL to the Marketo server instance for your subscription (e.g. "//app-sj03.marketo.com")</comment>
+                    <comment>Base URL to the Marketo server instance for your subscription (e.g. "//app-sjqe.marketo.com")</comment>
                 </field>
                 <field id="munchkin_id" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Munchkin ID</label>
