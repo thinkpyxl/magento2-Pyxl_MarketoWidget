@@ -22,12 +22,17 @@ class Form extends \Magento\Framework\View\Element\Template implements \Magento\
 	/**
 	 * @var string
 	 */
-	protected $_baseUrl;
+	private $baseUrl;
 
 	/**
 	 * @var string
 	 */
-	protected $_munchkinId;
+	private $munchkinId;
+
+    /**
+     * @var bool
+     */
+	private $isSandbox;
 
 	/**
 	 * Form constructor.
@@ -40,10 +45,12 @@ class Form extends \Magento\Framework\View\Element\Template implements \Magento\
 		Template\Context $context,
 		\Pyxl\MarketoWidget\Helper\Config $marketoConfig,
 		array $data = []
-	) {
-		parent::__construct( $context, $data );
-		$this->_munchkinId = $marketoConfig->getMunchkinId();
-		$this->_baseUrl = $marketoConfig->getBaseUrl();
+	)
+    {
+		parent::__construct($context, $data);
+		$this->munchkinId = $marketoConfig->getMunchkinId();
+		$this->baseUrl = $marketoConfig->getBaseUrl();
+		$this->isSandbox = $marketoConfig->isSandbox();
 	}
 
 	/**
@@ -51,8 +58,9 @@ class Form extends \Magento\Framework\View\Element\Template implements \Magento\
 	 *
 	 * @return string
 	 */
-	public function getSrc() {
-		return "//" . $this->_baseUrl . "/js/forms2/js/forms2.min.js";
+	public function getSrc()
+    {
+		return "//" . $this->baseUrl . "/js/forms2/js/forms2.min.js";
 	}
 
 	/**
@@ -61,13 +69,24 @@ class Form extends \Magento\Framework\View\Element\Template implements \Magento\
 	 *
 	 * @return string
 	 */
-	public function buildForm() {
+	public function buildForm()
+    {
 		return sprintf(
 			'MktoForms2.loadForm("%s", "%s", %s);',
-			$this->_baseUrl,
-			$this->_munchkinId,
-			$this->getData('form_id')
+			$this->baseUrl,
+			$this->munchkinId,
+			$this->getFormId()
 		);
+	}
+
+    /**
+     * Get the Form ID based on production/sandbox mode
+     *
+     * @return string
+     */
+    public function getFormId()
+    {
+        return $this->getData('form_id' . ($this->isSandbox ? '_sandbox' : ''));
 	}
 
 }

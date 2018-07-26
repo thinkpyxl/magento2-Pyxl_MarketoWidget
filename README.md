@@ -13,7 +13,7 @@ If you **don't** have Pyxl_Core installed already run this first:
 Then require this package:
 
     composer config repositories.pyxl-marketowidget git https://github.com/thinkpyxl/magento2-Pyxl_MarketoWidget.git
-    composer require pyxl/marketo-widget:^1.0.1
+    composer require pyxl/marketo-widget:^1.0.2
     bin/magento module:enable Pyxl_MarketoWidget
     bin/magento setup:upgrade
     bin/magento cache:clean 

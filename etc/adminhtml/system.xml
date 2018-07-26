@@ -11,17 +11,29 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="pyxl_marketo" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Marketo Settings</label>
+            <label>Marketo Widget</label>
             <tab>pyxl</tab>
             <resource>Pyxl_MarketoWidget::config</resource>
             <group id="settings" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
                 <label>Marketo Settings</label>
-                <field id="base_url" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Base URL</label>
+                <field id="sandbox" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Use Sandbox?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="base_url" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Base URL (Production)</label>
                     <comment>Base URL to the Marketo server instance for your subscription (e.g. "//app-sjqe.marketo.com")</comment>
                 </field>
-                <field id="munchkin_id" translate="label comment" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Munchkin ID</label>
+                <field id="munchkin_id" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Munchkin ID (Production)</label>
+                    <comment>Munchkin ID of the subscription.</comment>
+                </field>
+                <field id="base_url_sandbox" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Base URL (Sandbox)</label>
+                    <comment>Base URL to the Marketo server instance for your subscription (e.g. "//app-sjqe.marketo.com")</comment>
+                </field>
+                <field id="munchkin_id_sandbox" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Munchkin ID (Sandbox)</label>
                     <comment>Munchkin ID of the subscription.</comment>
                 </field>
             </group>

@@ -15,8 +15,11 @@
         <label translate="true">Marketo Form</label>
         <description>Embed a Marketo Form</description>
         <parameters>
-            <parameter name="form_id" xsi:type="text" required="false" visible="true">
+            <parameter name="form_id" xsi:type="text" required="true" visible="true">
                 <label translate="true">Form ID</label>
+            </parameter>
+            <parameter name="form_id_sandbox" xsi:type="text" required="false" visible="true">
+                <label translate="true">Form ID (Sandbox)</label>
             </parameter>
         </parameters>
     </widget>
