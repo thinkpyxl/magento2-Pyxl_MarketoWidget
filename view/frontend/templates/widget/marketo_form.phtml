@@ -4,11 +4,25 @@
  */
 ?>
 <?php if ($form_id = $block->getFormId()): ?>
-    <script type="text/javascript" src="<?php echo $block->getSrc() ?>"></script>
     <form id="mktoForm_<?php echo $form_id ?>">&nbsp;</form>
-    <script type="text/javascript">// <![CDATA[
-        <?php echo $block->buildForm(); ?>
-    // ]]></script>
+    <?php /** First we dynamically set the marketojs based on the environment */ ?>
+    <script>
+        require.config({
+            map: {
+                '*': {
+                    'marketojs': '<?php echo $block->getSrc() ?>'
+                }
+            }
+        });
+    </script>
+    <?php /** Now we init our component with the correct values */ ?>
+    <script type="text/x-magento-init">
+    {
+      "*": {
+        "marketoForm": <?php echo $block->getConfig() ?>
+      }
+    }
+    </script>
 <?php else: ?>
 <h1>No form found</h1>
 <?php endif; ?>

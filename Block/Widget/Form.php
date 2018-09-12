@@ -80,6 +80,22 @@ class Form extends \Magento\Framework\View\Element\Template implements \Magento\
 	}
 
     /**
+     * Build JSON config for loading
+     * the form in JS component
+     *
+     * @return string
+     */
+    public function getConfig()
+    {
+        $config = [
+            'base_url' => $this->baseUrl,
+            'munchkin_id' => $this->munchkinId,
+            'form_id' => $this->getFormId()
+        ];
+        return json_encode($config);
+	}
+
+    /**
      * Get the Form ID based on production/sandbox mode
      *
      * @return string
