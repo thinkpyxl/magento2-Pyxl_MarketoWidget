@@ -60,7 +60,7 @@ class Form extends \Magento\Framework\View\Element\Template implements \Magento\
 	 */
 	public function getSrc()
     {
-		return "//" . $this->baseUrl . "/js/forms2/js/forms2.min.js";
+		return $this->baseUrl . "/js/forms2/js/forms2.min.js";
 	}
 
 	/**
